@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Scrolling Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+
+    <section>
+        <img src="/images/stars.png" alt="" id="stars">
+        <img src="/images/moon.png" alt="" id="moon">
+        <img src="/images/mountains_behind.png" alt="" id="mountains_behind">
+        <h2 id="text" >Moon Light</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="/images/mountains_front.png" alt="" id="mountains_front">
+    </section>
+
+    <div class="sec" id="sec">
+        <h2>Parallax Scrolling Effects</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione placeat aliquam earum debitis modi nesciunt sed tempore reiciendis eius fugiat. Magnam inventore provident maxime sed id quibusdam praesentium iusto, quam aperiam sit ad deleniti corrupti minus. Officiis hic, alias ut quisquam ducimus minus maiores. Perferendis eligendi, sequi veniam, fugiat ut eius dicta adipisci molestias ipsa excepturi sed praesentium cumque deserunt deleniti tempora quasi labore delectus amet obcaecati sint. Enim ipsa expedita cumque omnis harum placeat nam tempore! Deleniti modi, laudantium corporis quis, doloribus deserunt excepturi quo repellat enim iste eligendi impedit aperiam nobis eveniet maxime tempora qui laborum, ab rerum.<br><br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae, expedita minima non ut quod commodi a eum. Nisi sint vel beatae, delectus velit ipsa alias ab vero tempora, nesciunt facere inventore! Cumque ratione ut qui quaerat nulla alias nisi illum voluptas, sed consequuntur maxime perspiciatis numquam beatae ipsa modi officia reiciendis pariatur libero reprehenderit harum! Possimus tempore nam quam neque?<br><br>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas voluptatem vitae minus obcaecati eum sint cupiditate odio itaque, id officiis ad unde odit magnam consectetur dignissimos expedita architecto placeat aperiam nihil. Dolore atque, voluptate ipsa minus nemo voluptatum modi, deleniti quisquam nostrum, incidunt sint. Fugiat mollitia ratione blanditiis libero illo quia deleniti, sequi accusantium error quidem rem architecto optio. Expedita, modi suscipit assumenda aspernatur ex quo, sequi illum voluptatum magnam quae iure ea? Quod facilis unde laboriosam laborum nihil qui!<br><br>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas voluptatem vitae minus obcaecati eum sint cupiditate odio itaque, id officiis ad unde odit magnam consectetur dignissimos expedita architecto placeat aperiam nihil. Dolore atque, voluptate ipsa minus nemo voluptatum modi, deleniti quisquam nostrum, incidunt sint. Fugiat mollitia ratione blanditiis libero illo quia deleniti, sequi accusantium error quidem rem architecto optio. Expedita, modi suscipit assumenda aspernatur ex quo, sequi illum voluptatum magnam quae iure ea? Quod facilis unde laboriosam laborum nihil qui!<br><br>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas voluptatem vitae minus obcaecati eum sint cupiditate odio itaque, id officiis ad unde odit magnam consectetur dignissimos expedita architecto placeat aperiam nihil. Dolore atque, voluptate ipsa minus nemo voluptatum modi, deleniti quisquam nostrum, incidunt sint. Fugiat mollitia ratione blanditiis libero illo quia deleniti, sequi accusantium error quidem rem architecto optio. Expedita, modi suscipit assumenda aspernatur ex quo, sequi illum voluptatum magnam quae iure ea? Quod facilis unde laboriosam laborum nihil qui!</p>
+    </div>
+
+    <script>
+        let stars= document.getElementById('stars');
+        let moon= document.getElementById('moon');
+        let mountains_behind= document.getElementById('mountains_behind');
+        let text= document.getElementById('text');
+        let btn= document.getElementById('btn');
+        let mountains_front= document.getElementById('mountains_front');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll',function(){
+            let value=window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1.05 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+    
+</body>
+</html>
